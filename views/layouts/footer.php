@@ -1,0 +1,1 @@
+<div>Junior Web Developper Loi Carlo &copy; <?= date('Y') ?></div>
