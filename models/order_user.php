@@ -95,7 +95,7 @@ public function total($id){
 
 
 public function order($id){
-    $sql = "SELECT * FROM orders_users WHERE user_id = $id";
+    $sql = "SELECT * FROM orders_users WHERE user_id = $id ORDER BY id DESC";
     $list = $this->database-> query($sql);
 
     if($list){

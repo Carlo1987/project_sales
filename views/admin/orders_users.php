@@ -14,19 +14,6 @@ Utils::isAdmin();
             <input type="number" name="order" placeholder="numero d'ordine">
         </div>
 
-        <div>
-            <h2 style="margin: 0 auto;">oppure</h2>
-        </div>
-
-        <div>
-            <label for="user">Cognome e nome:</label>
-            <input type="text" name="user" placeholder="cognome e nome...">
-        </div>
-
-        <div>
-            <label for="user">Email:</label>
-            <input type="text" name="email" placeholder="email...">
-        </div>
 
         <div>
             <input type="submit" value="Cerca" name="search_order">

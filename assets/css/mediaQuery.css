@@ -434,7 +434,7 @@
     }
 
     .hidden_orders{
-        display: block;
+        display: block; 
     }
 
     #cart{
@@ -871,7 +871,7 @@
         justify-content: flex-end;
     }
 
-    .hidden_menage_types ul{
+ /*    .hidden_menage_types ul{
         top: 100px !important;
         left: 0px !important; 
     }
@@ -879,7 +879,7 @@
     .hidden_menage_products ul{
         top: 230px !important;
         left: 0px !important; 
-    }
+    } */
     
     .message_element{
         top: 465px;

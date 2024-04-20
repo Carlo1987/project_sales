@@ -274,6 +274,15 @@ let dates = new FormData(form_cookies);
 
 
 
+  /////////////////  COLLEGAMENTO FILE PDF /////////////
+
+
+  function pdf(url){
+    window.open(url);
+  }
+
+
+
 
 
 

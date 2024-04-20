@@ -15,6 +15,7 @@ if (isset($result) && $result) {
 <div id="user_orders">
 
     <?php if ($orders->num_rows != 0) :
+
         while ($order = $orders->fetch_object()) :     ?>
 
             <div class="order visible_orders">
@@ -31,16 +32,16 @@ if (isset($result) && $result) {
                 </div>
 
                 <div>
-                    <a href="pdf/bill.php?order=<?= $order->id ?>" class="pdf">
+                    <a href="#" onclick="pdf('pdf/bill.php?order=<?= $order->id ?>')" class="pdf">
                         <img src="assets/img/documento.jpg" alt="file">
                     </a>
                 </div>
             </div>
-            <?php endwhile; ?>
 
 
+      
             <div class="hidden_orders">
-                <table border="1px">
+                 <table border="1px">
             
                     <tr>
                         <th>Ordine <span class="hidden_words">N°</span></th>
@@ -48,22 +49,22 @@ if (isset($result) && $result) {
                         <th>pdf</th>
                     </tr>
 
-                    <?php   $orders = $order_user -> order($_SESSION['identity']->id);
-                    
-                     while ($order = $orders->fetch_object()) :     ?>
+               
                         <tr>
                             <td><?= $order->id ?></td>
                             <td>€<?= $order->total_cost ?></td>
                             <td>
-                                <a href="pdf/bill.php?order=<?= $order->id ?>" class="pdf">
+                                <a href="#" onclick="pdf('pdf/bill.php?order=<?= $order->id ?>')" class="pdf">
                                     <img src="assets/img/documento.jpg" alt="file">
                                 </a>
                             </td>
                         </tr>
-                    <?php endwhile;  ?>
-                </table>
+                  
+                </table> 
             </div>
 
+
+            <?php endwhile; ?>
 
         <?php   else :  ?>
 

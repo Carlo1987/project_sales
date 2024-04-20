@@ -68,14 +68,14 @@ class Order_user_controller{
       }
 
 
+
     public function find_order(){
         global $host;
         if(isset($_POST['search_order'])){
             $order_user = new Order_user();
-            $user = new User();
 
-            if($_POST['order'] != null && $_POST['user'] == null && $_POST['email'] == null) {
-                $search_order = true;
+            if($_POST['order'] != null) {
+
                 $dates = $_POST['order']; 
                 $dates =  (int)$dates;
 
@@ -87,49 +87,15 @@ class Order_user_controller{
                 <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
                 }
 
-            }else if($_POST['user'] != null && $_POST['email'] != null && $_POST['order'] == null){
-                $user_dates = $_POST['user'];
-                $email = $_POST['email'];
-
-                $user_dates = explode(' ', $user_dates);
-                $surname = $user_dates[0];
-                $name = $user_dates[1];
-
-                $verify_user = $user->search_User_byElements($name,$surname,$email);
-
-                if(!$verify_user){
-                    $_SESSION['order']['error'] = "<div class='errors'> Utente non trovato </div>";
-                    echo "<h2> ...Ricerca in corso... </h2>
-                    <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
-                
-                }else{
-                    $orders = $order_user -> findUser($name,$surname,$email);
-                }
-               
-            }else if($_POST['user'] == null && $_POST['email'] == null && $_POST['order'] == null){
-                $_SESSION['order']['error'] = "<div class='errors'> Devi compilare o il campo di sopra o i due campi di sotto </div>";
-               echo "<h2> ...Ricerca in corso... </h2>
-                <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
-            
-            }else if($_POST['user'] != null && $_POST['email'] != null && $_POST['order'] != null){
-                $_SESSION['order']['error'] = "<div class='errors'> Devi compilare o solo il campo di sopra o solo i due campi di sotto </div>";
-               echo "<h2> ...Ricerca in corso... </h2>
-                <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
-            
-            }else if($_POST['user'] == null && $_POST['email'] != null && $_POST['order'] == null){
-                $_SESSION['order']['error'] = "<div class='errors'> I campi di sotto vanno compilati insieme </div>";
-               echo "<h2> ...Ricerca in corso... </h2>
-                <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
-            
-            }else if($_POST['user'] != null && $_POST['email'] == null && $_POST['order'] == null){
-                $_SESSION['order']['error'] = "<div class='errors'>  I campi di sotto vanno compilati insieme  </div>";
+                $result = true;
+                require 'views/orders_users/orders_list.php';
+            }else{
+                $_SESSION['order']['error'] = "<div class='errors'> Non hai inserito nessun numero d'ordine </div>";
                echo "<h2> ...Ricerca in corso... </h2>
                 <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
             
             }
 
-            $result = true;
-             require 'views/orders_users/orders_list.php';
         }
     }
 

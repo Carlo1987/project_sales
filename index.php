@@ -94,6 +94,8 @@ Utils::update_stock();
             <p class="quantity_products"><span><?= Utils::quantityCart() ?></span></p>
         </div>
 
+
+
         <div id="menu_hidden">
             <img src="assets/img/menu_web.jpg"  id="hidden_menu_img">
             <ul class="menu_hidden_style">
@@ -119,7 +121,7 @@ Utils::update_stock();
                 </li>
                 <li>
                 <div class="hidden_images">  <img src="assets/img/people_group.png"> </div>
-                  <div>  <a href='pdf/users_list.php'>
+                  <div>  <a href='#' onclick="pdf('pdf/users_list.php')">
                         Utenti fittizzi
                     </a> </div>
                 </li>
@@ -175,3 +177,9 @@ Utils::update_stock();
 </body>
 
 </html>
+
+
+
+
+
+

@@ -8,42 +8,58 @@ class Payment_controller{
 
          if(isset($_POST['card'])){
             if($_POST['name'] != '' && $_POST['surname'] != '' && $_POST['code'] != '' && $_POST['month'] != '' && $_POST['year'] != '' && $_POST['security'] != ''){
-               $name = $_POST['name'];
-               $surname = $_POST['surname'];
-               $type = 'carta di debito';
-               $code = $_POST['code'];
-               $month = $_POST['month'];
-               $year = $_POST['year'];
-               $security = $_POST['security'];
-               $bic = '';
-               $iban = '';
-   
-               global $verify;
-               $verify = true;
 
+               if(strlen($_POST['code']) != 16 ){
+                  $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> Il numero di carta deve essere di 16 caratteri </div>";
+                  global $host;
+                  echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
+               
+               }else{
+                  $name = $_POST['name'];
+                  $surname = $_POST['surname'];
+                  $type = 'carta di debito';
+                  $code = $_POST['code'];
+                  $month = $_POST['month'];
+                  $year = $_POST['year'];
+                  $security = $_POST['security'];
+                  $bic = '';
+                  $iban = '';
+   
+                  global $verify;
+                  $verify = true;
+               }
+   
             }else{
-               $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> Compilare tutti i dati </div>";
+               $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> Compilare tutti i campi </div>";
                global $host;
                echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
-            }
+            } 
             
 
         }else if(isset($_POST['bank'])){
            if($_POST['dates'] != '' && $_POST['iban'] != ''){
-            $dates = $_POST['dates'];
-            $dates = explode(' ',$dates);
-            $name = $dates[0];
-            $surname = $dates[1];
-            $type = 'bonifico';
-            $code = '';
-            $month = '';
-            $year = '';
-            $security = '';
-            $bic = $_POST['bic'];
-            $iban = $_POST['iban'];
 
-            global $verify;
-            $verify = true;
+            if(strlen($_POST['iban']) != 33){
+               $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> Iban non valido, segui l'esempio sopra </div>";
+               global $host;
+               echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
+            
+            }else{
+               $dates = $_POST['dates'];
+               $dates = explode(' ',$dates);
+               $name = $dates[0];
+               $surname = $dates[1];
+               $type = 'bonifico';
+               $code = '';
+               $month = '';
+               $year = '';
+               $security = '';
+               $bic = $_POST['bic'];
+               $iban = $_POST['iban'];
+   
+               global $verify;
+               $verify = true;
+            }
 
            }else{
             $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> I campi IBAN e NOME TITOLARE sono obbligatori </div>";

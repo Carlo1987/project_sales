@@ -33,7 +33,7 @@
 
         <div>
             <label for="code">Numero carta:</label>
-            <input type="number" minlength="16" placeholder="numero carta di 16 caratteri senza spazi" name="code">
+            <input type="number"  placeholder="numero carta di 16 caratteri senza spazi" name="code">
         </div>
 
         <div class="expiration_cards">
@@ -72,12 +72,12 @@
  
             <div>
                 <label for="bic">BIC:</label>
-                <input type="text" minlength="8" maxlength="11" placeholder="codice BIC dagli 8 ai 11 caratteri, non obbligatorio" name="bic">
+                <input type="text" placeholder="codice BIC dagli 8 ai 11 caratteri, non obbligatorio" name="bic">
             </div>
        
             <div>
                 <label for="iban">IBAN:</label>
-                <input type="text" minlength="32" placeholder="IT 74 M 12345 12345 00000000 4923" name="iban">
+                <input type="text" placeholder="IT 74 M 12345 12345 00000000 4923" name="iban">
             </div>
 
             <div>
