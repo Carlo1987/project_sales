@@ -11,7 +11,7 @@ $mail = new PHPMailer(true);
 try {
     require 'structure_email.php';
 
-    $mail->setFrom('email.progetto@gmail.com', 'Progetto vendita');
+    $mail->setFrom($my_email, 'Progetto vendita');
 
     $mail->addAddress($email);   //   posso aggiungere un secondo valore opzionale, inserendo il nome utente per esempio 
 
@@ -24,7 +24,6 @@ try {
     $mail->AltBody = 'testo email non supportato';
 
     $mail->Body = "
-                    <div style='$style_container'>
                        <h2 style='$style_title'> Ordine consegnato! </h2>
                        <div style='$style_message'>
                           L'ordine fittizio e' stato consegnato! Magari gli ordini arivassero cosi' velocemente eh!!<br>
@@ -32,10 +31,10 @@ try {
                           Se sei interessato a contattarmi per dei veri progetti, ecco i miei contatti: <br>
                           Web Developer Carlo Loi <br>
                           telefono:  3338416149  <br>
-                          email: <a href='carlo_loi87@yahoo.it'> carlo_loi87@yahoo.it </a> <br>
+                          email: <a href='mailto:carlo_loi87@yahoo.it'> carlo_loi87@yahoo.it </a> <br>
                           A presto!!!
                        </div>
-                    </div>";
+                    ";
 
     $mail->send();
 } catch (Exception $e) {

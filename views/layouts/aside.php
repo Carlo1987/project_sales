@@ -105,10 +105,8 @@
                         <h4>AMMINISTRATORE</h4>
                     </div>
 
-                   <!--  <li> <a href="pdf/users_list_complete.php" style="color: blue;">Elenco utenti</a> </li> -->
                     <li> <a href="#" onclick="pdf('pdf/orders_list.php')" style="color: blue;">Elenco ordini utenti</a> </li>
                     <li> <a href="index.php?controller=Order_user_controller&action=search" style="color:green;">Cerca ordine cliente</a> </li>
-<!--                     <li> <a href="index.php?controller=Users_controller&action=role">Nuovi ruoli</a> </li> -->
                     <li class="manage_elements management_types">
                         <a href="#">Gestischi categorie</a>
                         <ul>
@@ -120,7 +118,7 @@
                     <li class="manage_elements management_products">
                         <a href="#">Gestisci prodotti</a>
                         <ul>
-                            <li> <a href="#" onclick="('pdf/products_list.php')">Lista prodotti</a> </li>
+                            <li> <a href="#" onclick="pdf('pdf/products_list.php')">Lista prodotti</a> </li>
                             <li> <a href="index.php?controller=Products_controller&action=show">Aggiungi prodotto</a> </li>
                             <li> <a href="#" class="modify_element" data-change="modify">Modifica prodotto</a></li>
                             <li> <a href="#" class="modify_element" data-change="delete">Elimina prodotto</a></li>
@@ -168,10 +166,8 @@
                         <h4>AMMINISTRATORE</h4>
                     </div>
 
-                <!--     <li> <a href="pdf/users_list_complete.php" style="color: blue;">Elenco utenti</a> </li> -->
                     <li> <a href="#" onclick="pdf('pdf/orders_list.php')" style="color: blue;">Elenco ordini utenti</a> </li>
                     <li> <a href="index.php?controller=Order_user_controller&action=search" style="color:green;">Cerca ordine cliente</a> </li>
-              <!--       <li> <a href="index.php?controller=Users_controller&action=role">Nuovi ruoli</a> </li> -->
                     <li class="hidden_manage_elements ">   <!-- hidden_menage_types -->
                         <a href="#">Gestischi categorie</a>
                         <ul>

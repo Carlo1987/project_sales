@@ -75,8 +75,8 @@ class Users_controller
                 $image_name = $image['name'];
                 $image_type = $image['type'];
                 $image_tmp = $image['tmp_name'];
-
-                if ($image_type == 'image/jpg' || $image_type == "image/jpeg" || $image_type == "image/png" || $image_type == "image/gif") {
+        
+                if ($image_type == 'image/jpg' || $image_type == "image/jpeg" || $image_type == "image/png" || $image_type == "image/gif" || $image_type == "image/webp") {
                     if (!is_dir('assets/img/users')) {
                         mkdir('assets/img/users');
                     }
@@ -164,15 +164,15 @@ class Users_controller
             global $host;
 
             if (!isset($_SESSION['identity'])) {
-                echo "<h2>... Registrazione in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php' </script>";
+                echo "<h2>... Registrazione in corso ... </h2> <script> window.location.href = 'https://$host' </script>";
            
             } else if (isset($_SESSION['identity'])) {
 
                 if(isset($_GET['editPassword'])){
-                    echo "<h2>... Modifica dati in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Users_controller&action=change_password' </script>";
+                    echo "<h2>... Modifica dati in corso ... </h2> <script> window.location.href = 'https://$host?controller=Users_controller&action=change_password' </script>";
 
                 }else{
-                    echo "<h2>... Modifica dati in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Users_controller&action=change' </script>";
+                    echo "<h2>... Modifica dati in corso ... </h2> <script> window.location.href = 'https://$host?controller=Users_controller&action=change' </script>";
                 }
             }
         }
@@ -215,7 +215,7 @@ class Users_controller
             }
 
             global $host;
-            echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php' </script>";
+            echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host' </script>";
         }
     }
 
@@ -226,7 +226,7 @@ class Users_controller
             session_destroy();
 
             global $host;
-            echo "<h2>... Chiusura sessione in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?ending=eseguito' </script>";
+            echo "<h2>... Chiusura sessione in corso ... </h2> <script> window.location.href = 'https://$host?ending=eseguito' </script>";
         }
     }
 
@@ -239,42 +239,6 @@ class Users_controller
     public function change_password()
     {
         require 'views/users/change_password.php';
-    }
-
-
-    public function role()
-    {
-        require 'views/users/role.php';
-    }
-
-
-    public function new_role()
-    {
-        if (isset($_POST['role'])) {
-            $name = $_POST['name'];
-            $surname = $_POST['surname'];
-            $email = $_POST['email'];
-            $role = $_POST['chose_role'];
-
-            $user_class = new User();
-            $user = $user_class->search_User_byElements($name, $surname, $email);
-
-            if ($user != false) {
-                if($user->id <= 8 && $user->id != $_SESSION['identity']->id && $user->id != 1){
-                    $user_class->modify_role($role, $user->id);
-                    $_SESSION['role'] = 'Ruolo modificato';
-
-                }else{
-                    $_SESSION['error_role'] = 'Non è possibile modificare il ruolo di questo Utente';
-                }
-               
-            } else {
-                $_SESSION['error_role'] = 'Utente non trovato';
-            }
-
-            global $host;
-            echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Users_controller&action=role' </script>";
-        }
     }
 
 
@@ -298,7 +262,7 @@ class Users_controller
 
 
     public function send_token(){
-      if(isset($_POST) || isset($_SESSION['token']['email'])){
+        if(isset($_POST) || isset($_SESSION['token']['email'])){
  
         global $host;
         $email = $_POST['email'];
@@ -314,31 +278,29 @@ class Users_controller
                 for($i=1; $i<=5; $i++){
                     $number = rand(1,9);
                     $token = $token.$number;
-                }
-        
+                }        
+
                 $_SESSION['token']['code'] = $token;
                    
-                    require 'views/emails/email_reset.php';
-        
-                    echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Users_controller&action=verify_token' </script>";
-          
-                }else{
-                    $_SESSION['token_error'] = "<div class='errors'> All'utente associato a questa email non possono essere modificati i dati </div>";
-                    echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Users_controller&action=email_reset' </script>";
-                }
-       
+                require 'views/emails/email_reset.php';
+                echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host?controller=Users_controller&action=verify_token' </script>"; 
+             
+            }else
+                $_SESSION['token_error'] = "<div class='errors'> I dati di questo Utente non possono essere modificati </div>";
+                echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host?controller=Users_controller&action=email_reset' </script>";
+      
         }else{   // se l'utente con questa email non è presente nel database....
             $_SESSION['token_error'] = "<div class='errors'> Nessun Utente registrato con questa email, digitare correttamente oppure effettuare la registrazione </div>";
-            echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Users_controller&action=email_reset' </script>";
-         } 
-      } 
+            echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host?controller=Users_controller&action=email_reset' </script>";
+        }  
+        }
     }
-
+ 
 
   
     public function reset_password(){
          require 'views/users/reset_password.php';
-    }
+    } 
 
 
     public function new_password(){
@@ -356,17 +318,17 @@ class Users_controller
                 Utils::delete_token();
 
                 $_SESSION['reset'] = "<div class='allerts'>Password resettata</div>";
-                echo "<h2>... Modifica password in corso, stai venendo reindirizzato alla HOME ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php' </script>";
+                echo "<h2>... Modifica password in corso, stai venendo reindirizzato alla HOME ... </h2> <script> window.location.href = 'https://$host' </script>";
             
             }else{
                 $_SESSION['token_error'] = "<div class='errors'> Hai digitato due password diverse, devi scrivere la stessa password in entrambi i campi </div>";
-                echo "<h2>... Modifica password in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Users_controller&action=reset_password' </script>";
+                echo "<h2>... Modifica password in corso ... </h2> <script> window.location.href = 'https://$host?controller=Users_controller&action=reset_password' </script>";
             }
         }
-           
-        
     }
 
 
 
 }
+
+

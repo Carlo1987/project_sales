@@ -1,11 +1,12 @@
 
 //////////////////    URL DI BASE    ///////////////////////////
-const url = "https://"+document.location.hostname+"/progetti/progetto_vendita/index.php";
+//   const url = "https://carloloidev";
+const url = "https://localhost/progetti/progetto_vendita/index.php";
 
 
 /////////////////  MESSAGGIO BOTTONE LISTA DEGLI UTENTI FITTIZZI  ///////////////////////
 
-const users_list = document.querySelector('#users_list');
+const users_list = document.querySelector('#users_list img');
 
 users_list.addEventListener('mouseover',()=>{
   let div = document.createElement('div');
@@ -196,6 +197,19 @@ delete_product.onclick = function(){
 
 
 
+
+/////////////////  CONTAINER RESET PASSWORD  ///////////////////////
+
+const aside = document.querySelector('aside');
+const main = document.querySelector('main');
+
+if(window.location.href.indexOf('email_reset') > 1 || window.location.href.indexOf('verify_token') > 1 || window.location.href.indexOf('send_token') > 1 || window.location.href.indexOf('reset_password') > 1){
+  aside.style.display = 'none';
+  main.style.flexBasis = '100%';
+}
+
+
+
 //////////////////   BOTTONE  RESET  PASSWORD  ///////////////
 
 if(window.location.href.indexOf('verify_token') > 1){
@@ -227,6 +241,16 @@ if(window.location.href.indexOf('verify_token') > 1){
 }
 
 
+
+  /////////////////  COLLEGAMENTO FILE PDF /////////////
+
+
+  function pdf(url){
+    window.open(url);
+  }
+
+
+
   /////////////////  MESSAGGIO BOTTONE PER REGISTRARSI  ///////////////////////
 
   const register = document.querySelector('.button_register');
@@ -247,39 +271,6 @@ if(window.location.href.indexOf('verify_token') > 1){
 
 
 
-  /////////////////  COOKIES /////////////
-
-const form_cookies = document.querySelector('.formCookies');
-
-form_cookies.addEventListener('submit', function(e){
-  e.preventDefault();
-
-let dates = new FormData(form_cookies);
-
- fetch("cookies/post.php", {
-  method: 'POST',
-  body: dates
-})
-.then(response => response.json())
-.then(response =>{  
-   if(typeof(response) == 'string'){
-    const divForm = document.querySelector('#divCookie');
-       divForm.style.display = "none";
-   }
-}) 
-
-
-});
-
-
-
-
-  /////////////////  COLLEGAMENTO FILE PDF /////////////
-
-
-  function pdf(url){
-    window.open(url);
-  }
 
 
 

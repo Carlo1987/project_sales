@@ -63,17 +63,17 @@ class Orders_prod_controller{
              }
           
      // header('Location: index.php?controller=Orders_prod_controller&action=cart');
-      echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Orders_prod_controller&action=cart' </script>";
+      echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host?controller=Orders_prod_controller&action=cart' </script>";
 
       }else{  #  se $product->stock - $quantity < 0
         $_SESSION['error_stock'] = "Spiacenti, restano solo $product->stock articoli in magazzino";
       //  header('Location: index.php?controller=Products_controller&action=product_one&id='.$product->id);
-      echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Products_controller&action=product_one&id='$product->id </script>";
+      echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host?controller=Products_controller&action=product_one&id='$product->id </script>";
       }
 
       }else{   # se $product->stock <= 0
        // header('Location: index.php?controller=Products_controller&action=product_one&id='.$product->id);
-       echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Products_controller&action=product_one&id='$product->id </script>";
+       echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host?controller=Products_controller&action=product_one&id='$product->id </script>";
       }
         }else{  # se non arriva il post buy e il get id
             echo "<div class='noResult_search'> Errore di procedura dell'ordine </div>";
@@ -97,7 +97,7 @@ class Orders_prod_controller{
        }
  
        global $host;
-      echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php?controller=Orders_prod_controller&action=cart' </script>";
+      echo "<h2>... Caricamento in corso ... </h2> <script> window.location.href = 'https://$host?controller=Orders_prod_controller&action=cart' </script>";
     }
 
 

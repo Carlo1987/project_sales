@@ -116,7 +116,7 @@ class Products_controller
             }
 
             global $host;
-          echo "<h2>...$text... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php' </script>";
+          echo "<h2>...$text... </h2> <script> window.location.href = 'https://$host' </script>";
         }
       }
     }
@@ -146,7 +146,7 @@ class Products_controller
             $product->delete($id);
 
             global $host;
-            echo "<h2>... Eliminazione in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php' </script>";
+            echo "<h2>... Eliminazione in corso ... </h2> <script> window.location.href = 'https://$host' </script>";
         }  
     }
 

@@ -1,5 +1,8 @@
 <?php
-$host = $_SERVER['HTTP_HOST'];
+
+//    $host = 'carloloidev';
+$host = 'localhost/progetti/progetto_vendita/index.php';
+
 require 'config/database.php';
 require 'models/type.php';
 require 'models/product.php';
@@ -15,12 +18,10 @@ require 'controllers/types_controller.php';
 require 'controllers/orders_prod_controller.php';
 require 'controllers/orders_user_controller.php';
 require 'controllers/payment_controller.php';
-require 'cookies/cookies.php';
 
 Utils::deleteCookies(); 
 Utils::recoverSession();
 Utils::cookiesIdentity();
-Utils::cookieMarketing();
 
 Utils::update_orders();
 Utils::update_stock(); 
@@ -101,7 +102,7 @@ Utils::update_stock();
             <ul class="menu_hidden_style">
                 <li>
                 <div class="hidden_images"> <img src="assets/img/shopping_cart.png"> </div>
-                 <div>   <a href='index.php??controller=Orders_prod_controller&action=cart'>
+                 <div>   <a href='index.php?controller=Orders_prod_controller&action=cart'>
                         Carrello (<span><?= Utils::quantityCart() ?></span>)
                     </a> </div>
                 </li>
@@ -121,9 +122,9 @@ Utils::update_stock();
                 </li>
                 <li>
                 <div class="hidden_images">  <img src="assets/img/people_group.png"> </div>
-                  <div>  <a href='#' onclick="pdf('pdf/users_list.php')">
-                        Utenti fittizzi
-                    </a> </div>
+                  <div>  
+                    <a href='#' onclick="pdf('pdf/users_list.php')">  Utenti fittizzi  </a> 
+                  </div>
                 </li>
                 <li class="hidden_contacts">
                    <div class="hidden_images"> <img src="assets/img/phone.png"> </div>

@@ -12,7 +12,7 @@ class Payment_controller{
                if(strlen($_POST['code']) != 16 ){
                   $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> Il numero di carta deve essere di 16 caratteri </div>";
                   global $host;
-                  echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
+                  echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host?controller=Order_user_controller&action=payment' </script>";
                
                }else{
                   $name = $_POST['name'];
@@ -32,7 +32,7 @@ class Payment_controller{
             }else{
                $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> Compilare tutti i campi </div>";
                global $host;
-               echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
+               echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host?controller=Order_user_controller&action=payment' </script>";
             } 
             
 
@@ -42,7 +42,7 @@ class Payment_controller{
             if(strlen($_POST['iban']) != 33){
                $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> Iban non valido, segui l'esempio sopra </div>";
                global $host;
-               echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
+               echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host?controller=Order_user_controller&action=payment' </script>";
             
             }else{
                $dates = $_POST['dates'];
@@ -64,7 +64,7 @@ class Payment_controller{
            }else{
             $_SESSION['error_payment'] = "<div class='errors' style='margin-top:8px;'> I campi IBAN e NOME TITOLARE sono obbligatori </div>";
             global $host;
-            echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
+            echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host?controller=Order_user_controller&action=payment' </script>";
            }
         }
 
@@ -127,7 +127,7 @@ class Payment_controller{
             unset($_SESSION['cart']);
 
             global $host;
-           echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Payment_controller&action=end_order&ending=eseguito' </script>";
+           echo "<h2> ...Elaborazione ordine in corso... </h2>  <script> window.location.href='https://$host?controller=Payment_controller&action=end_order&ending=eseguito' </script>";
         }
       }
      }

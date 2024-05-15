@@ -35,7 +35,7 @@ class Types_controller{
         }
 
         global $host;
-       echo "<h2>... Caricamento ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php' </script>";
+       echo "<h2>... Caricamento ... </h2> <script> window.location.href = 'https://$host' </script>";
     }
 
 
@@ -53,7 +53,7 @@ class Types_controller{
             $type->delete($id);
 
             global $host;
-            echo "<h2>... Cancellazione in corso ... </h2> <script> window.location.href = 'https://$host/progetti/progetto_vendita/index.php' </script>";
+            echo "<h2>... Cancellazione in corso ... </h2> <script> window.location.href = 'https://$host' </script>";
         }
     }
 

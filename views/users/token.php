@@ -9,7 +9,7 @@
 <input type="submit" value="Invia" class="reset" style="position: relative;">
 
 <div class="errors error_token" style="display: none;"> Il codice inserito non è corretto, digitalo correttamente oppure 
-    <a href='https://localhost/php&sql/progetti/progetto_vendita/index.php?controller=Users_controller&action=email_reset'>clicca qui</a> per inviarne uno nuovo
+    <a href='https://localhost/php&sql/progetti/progetto_vendita/index.php?controller=Users_controller&action=email_reset'>clicca qui</a> per riceverne uno nuovo
 </div>
 
 <div class="errors error_length" style="display: none;">

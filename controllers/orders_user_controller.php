@@ -33,17 +33,17 @@ class Order_user_controller{
                     $_SESSION['order']['total'] = number_format($total,2);
     
                     global $host;
-                    echo "<h2> ...Caricamento in corso...</h2> <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=payment' </script>";
+                    echo "<h2> ...Caricamento in corso...</h2> <script> window.location.href='https://$host?controller=Order_user_controller&action=payment' </script>";
                
                 }else{
                     global $host;
-                    echo "<h2> ...Errore, non è presente nessun prodotto nel carrello...</h2>  <script> window.location.href='https://$host/progetti/progetto_vendita/index.php'  </script>";
+                    echo "<h2> ...Errore, non è presente nessun prodotto nel carrello...</h2>  <script> window.location.href='https://$host'  </script>";
                 }
            
              }else{
                 $_SESSION['error_order_user'] = "<div class='errors'> Compilare tutti i campi </div>";
                 global $host;
-                echo "<h2> ...Caricamento in corso...</h2> <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=order' </script>";
+                echo "<h2> ...Caricamento in corso...</h2> <script> window.location.href='https://$host?controller=Order_user_controller&action=order' </script>";
             }
         }
     }
@@ -84,7 +84,7 @@ class Order_user_controller{
                 if($orders->num_rows == 0){
                     $_SESSION['order']['error'] = "<div class='errors'> Numero d'ordine non trovato </div>";
                     echo "<h2> ...Ricerca in corso... </h2>
-                <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
+                <script> window.location.href='https://$host?controller=Order_user_controller&action=search' </script>";
                 }
 
                 $result = true;
@@ -92,7 +92,7 @@ class Order_user_controller{
             }else{
                 $_SESSION['order']['error'] = "<div class='errors'> Non hai inserito nessun numero d'ordine </div>";
                echo "<h2> ...Ricerca in corso... </h2>
-                <script> window.location.href='https://$host/progetti/progetto_vendita/index.php?controller=Order_user_controller&action=search' </script>";
+                <script> window.location.href='https://$host?controller=Order_user_controller&action=search' </script>";
             
             }
 
