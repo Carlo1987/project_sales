@@ -1,6 +1,6 @@
 
 //////////////////    URL DI BASE    ///////////////////////////
-//   const url = "https://carloloidev";
+//   const url = "https://carloloidev.com/Project_Shop";
 const url = "https://localhost/progetti/progetto_vendita/index.php";
 
 

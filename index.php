@@ -1,6 +1,6 @@
 <?php
 
-//    $host = 'carloloidev';
+//    $host = 'carloloidev.com/Project_Shop';
 $host = 'localhost/progetti/progetto_vendita/index.php';
 
 require 'config/database.php';
