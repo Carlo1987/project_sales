@@ -1,0 +1,999 @@
+
+@media(max-width:1496px){
+
+    aside{
+        flex-basis: 25%;
+    }
+
+    main{
+        flex-basis: 73%;
+    }
+
+    section{
+        display: none;
+    }
+
+    #hidden_main{
+        display: flex !important;
+    }
+
+    .paginates{
+        display: none;
+    }
+
+    .query_type:hover{
+        background-color: #f9f6f6e6;
+        box-shadow: 1px 1px 3px #555;
+    }
+   
+    .gender{
+        width: 35% !important;
+        margin-left: 32% !important;
+    }
+
+    .forget_password{
+        font-size: 15px;
+    }
+
+   
+}
+
+
+
+@media(max-width:1297px){
+
+    .no_loading{
+        flex-direction: column;
+        min-height: 170px;
+        gap: 15px;
+    }
+
+    .time_order{
+        display: none;
+    }
+
+    .message_payment{
+        width: 90%;
+    }
+
+    .space_payment{
+        display: none;
+    }
+
+    #search{
+        width: 47%;
+        margin-left: 50px;
+    }
+
+    aside{
+        width: 100%;
+        height: auto;
+    }  
+
+    #aside_responsive{
+        flex-direction: row;
+    }
+
+
+    .no_login_max{ display: flex; }
+
+    .register,
+    .login{
+        width: 48.5% !important;
+        display: none;  
+    }
+
+    .login{
+        height: 210px;
+    } 
+
+    .visible_profile{
+        display: none;
+    }
+
+    .hidden_profile{
+        display: flex;
+    }
+
+    .hidden_aside{
+        display: flex;
+    }
+
+    .hidden_welcome{
+        width: 40%;
+        margin-right: 5px;
+        text-align: center;
+        padding-top:10px;
+    }
+
+    main{
+        width: 100%;
+        height: auto;
+    }
+
+    .message_element{
+        width: 300px;
+        height: auto;
+        top: 400px;
+       margin-left: 30%;
+    }
+
+    .message_element h2{
+        font-size: 16px;
+    }
+
+    .message_element p{
+        font-size: 12px;
+    }
+
+    .message_element input[type="submit"]{
+        height: 20px;
+        font-size: 12px;
+        line-height: 0px;
+    }
+    
+    .image_product{
+        flex-basis: 37%;
+        height: 100%;
+    }
+
+    .content_products_type{
+        width: 90% !important;
+        margin: 0 auto;
+    }
+
+    .image_product{
+        align-self: center;
+    }
+
+    .image_product img{
+       height: 300px;
+    }
+
+    .buy{
+        margin-left: 18px;
+    }
+
+    .noResult_search{
+        width: 100%;
+    }
+
+    .gender{
+        width: 20% !important;
+    }
+}
+
+
+@media (max-width:980px){
+
+    .link_home{
+        display: none;
+    }
+
+    .gender{
+        width: 22% !important;
+    }
+}
+
+
+@media (max-width:913px){
+
+    #search{
+        width: 40%;
+        margin-left: 85px;
+    }
+
+    .change_password_user{
+        width: 100%;
+    }
+
+    .content_products_type{
+        width: 100% !important; 
+        margin: 0 auto; 
+    }
+
+    .gender{
+        width: 25% !important;
+    }
+}
+
+
+@media (max-width:896px){
+
+    #menu_types ul{
+        width: 90%;
+        left: 5%;
+    }
+
+    #search{
+        margin-left: 80px;
+    }
+
+    .hidden_welcome{
+        width: 50%;
+    }
+
+    .message_element{
+       margin-left: 20%;
+    }
+
+}
+
+
+
+@media (max-width:871px){
+    #search{
+        width: 27%;
+        margin-left: 85px;
+     }
+
+     #user_orders form div{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #user_orders form label{
+        width: 100%;
+        font-size: 22px;
+    }
+    
+    #user_orders form input[type="text"],
+    #user_orders form input[type="number"]{
+        width: 100%;
+        height: 25px;
+        padding-left: 2px;
+    }
+
+    .content_products_type{
+        width: 90% !important; 
+        gap:20px;
+    }
+}
+
+
+
+@media (max-width:821px){
+
+    .methods_payments{
+        flex-direction: row !important;
+    }
+
+    .expiration_cards{
+        flex-direction: row !important;
+    }
+
+    .payment div{
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .payment div label{
+        width: 100%;
+    }
+
+    .payment div input[type="number"],
+    .payment div input[type="text"]{
+    width: 100%;
+    padding-left: 0px;
+    }
+
+
+}
+
+
+
+@media (max-width:791px){
+
+    .result_search{
+        display: none;
+    }
+
+    .hidden_search{
+        display: block;
+    }
+
+    .no_login_max{ display: none; }
+
+    .no_login{ display: flex; }
+
+    #aside_responsive{
+        flex-wrap: wrap;
+    } 
+
+    .login,
+    .register{
+        width: 100% !important;
+    }
+
+    .gender{
+        width: 13% !important;
+    } 
+
+    .button{
+        width: auto !important;
+    }
+}
+
+
+@media (max-width:768px){
+    #search{
+       width: 30%;
+       margin-left: 100px;
+    }
+
+    .hidden_welcome{
+        width: 55%;
+    }
+
+    .hidden_menu_aside{
+        width: 45%;
+    }
+
+    .content_products_type{
+        width: 95%; 
+        gap:20px;
+    }
+
+   
+}
+
+
+@media (max-width:741px){
+
+    .message_element{
+        margin-left: 0%;
+     }
+
+    .content_products_type{
+        width: 100% !important; 
+        margin: 0 auto; 
+    }
+
+    .product_content{
+        flex-basis: 90%;
+        margin: 0 auto;
+    }
+
+    .image_product{
+        display: none;
+    }
+
+    .hidden_img_product{
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        height: 210px;
+    }
+ 
+    .product{
+        width: 85px; 
+        height: 158px;
+    }
+
+    .product h3{
+        display: none;
+    }
+
+    .product p{
+        font-size: 14px;
+    }
+
+    .product img{
+        width: 55px;
+        height: 65px;
+        margin-left: 14px;
+    } 
+}
+
+
+@media (max-width:675px){
+
+    #title{
+        gap: 5px;
+        height: 60px;
+    }
+
+    #title img{
+        width: 50px;
+        height: 30px;
+    }
+
+    #title h1{
+        font-size: 27px;
+    }
+
+    nav ul li{
+        padding-left: 0px;
+    }
+
+    #search{
+        margin-left: 100px;
+        width: 35%;
+    }
+
+  
+    #search form input[type="text"]{
+        width: 102%;
+        height: 30px;
+        font-size: 12px; 
+    }
+
+    #search form img{
+        width: 24px;
+        height: 22px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .hidden_welcome{
+        display: none !important;
+    }
+
+    .hidden_aside img{
+       margin-left: -10px;
+    }
+
+    .hidden_menu_aside{
+        width: 100%;
+    }
+
+    .visible_orders{
+        display: none;
+    }
+
+    .hidden_orders{
+        display: block; 
+    }
+
+    #cart{
+        display: none;
+    }
+
+    #users_list{
+        display: none;
+    }
+
+    #menu_hidden{
+        display: flex;
+    } 
+
+    .hidden_words_product{
+        display: none;
+    }
+
+    .buttons{
+        width: 100%;
+    }
+
+    .add_products{
+        display: none;
+    }
+
+    .buttons div{
+        margin: 0 auto;
+    }
+
+    .hidden_cart{
+        display: none;
+    }
+
+    .chose_payment{
+        justify-content: space-between;
+        gap: 0px;
+    }
+
+    .chose_payment div{
+        width: 40%;
+    }
+
+    .gender{
+        width: 15% !important;
+    }
+
+}
+
+
+@media (max-width:625px){
+.change_datos_user,
+.type,
+.confirm {
+    width: 100%;
+}
+
+#user_orders form{
+    width: 100%;
+}
+
+#user_orders form input[type="submit"]{
+    width: 50%;
+}
+
+#cart_boxe{
+    width: 100%;
+}
+
+.final_message{
+    font-size: 13px;
+}
+
+}
+
+
+@media (max-width:573px){
+
+    .loading img{
+        width: 40%;
+    }
+
+    .chose_payment{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chose_payment div{
+        width: 60%;
+    }
+
+    .gender{
+        width: 19% !important;
+    }
+
+    #cookie{
+        width: 100%;
+    }
+}
+
+
+@media (max-width:559px){
+
+    .stock{
+        font-size: 18px;
+    }
+
+    .noResult_search{
+        font-size: 15px;
+    }
+
+    .contacts__section{
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width:541px){
+    #container{
+        gap: 15px;
+    }
+
+    #search{
+        margin-left: 60px;
+    }
+
+    nav ul{
+        gap: 0px; 
+    }
+
+    nav ul li{
+        padding-left: 10px;
+        padding-right: 5px;
+  
+    }
+
+    nav ul li a{
+        font-size: 20px;
+        padding-left: 0px;
+    }
+
+    nav ul li a:hover{
+        font-size: 20px;
+    }
+
+    .change_password_user div {
+    flex-direction: column;
+    }
+
+    .change_password_user input {
+       width: 100%;
+    }
+
+    .change_password_user label {
+        width: 100%;
+        height: 22px;
+    }
+
+    .change_datos_user div,
+    .type div,
+    .confirm div {
+    flex-direction: column;
+    }
+
+    .change_datos_user input,
+    .type input,
+    .type textarea,
+    .confirm input{
+       width: 100% !important;
+    }
+
+    .change_datos_user label,
+    .type label,
+    .confirm label{
+        width: 100%;
+        height: 22px;
+    }
+
+    .confirm input[type="text"]{
+        height: 24px;
+    }
+
+    .change_datos_user select,
+    .type select,
+    .confirm select{
+        width: 60% !important;
+    }
+
+    .type_cards{
+        display: none;
+    }
+
+    .methods_payments{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .rules{
+        font-size: 12px;
+    }
+
+    .message_element{
+        top: 360px;
+        margin-left: -25%;
+     }
+
+    footer{
+        height: 35px;
+        margin-top: 12px;
+     }
+    
+
+    footer div{
+        font-size: 17px;
+    }
+}
+
+
+@media (max-width:519px){
+
+    .form{
+        flex-direction: column;
+    }
+
+    .buy_boxe{
+        margin: 0 auto;
+        gap: 20px;
+        margin-bottom: 5px;
+    }
+
+    .buy{
+        margin: 0 auto;
+    }
+
+    .buttons_change{
+        flex-direction: column;
+        width: 70%;
+        margin: 0 auto;
+    }
+  
+    .hidden_search td{
+        font-size: 12px;
+    }
+
+    .form_forget_password input[type = "email"],
+    .form_forget_password input[type = "number"],
+    .form_forget_password input[type = "password"]{
+       width: 100%;
+    }
+}
+
+
+
+@media (max-width:475px){
+
+    .hidden_img_product{
+        width: 100%;
+    }
+
+    .query_type a{
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    .visible_title_main{
+        display: none;
+    }
+
+    .hidden_title_main{
+        display: block;
+    }
+
+    .query_type a div img{
+        height: 95%;
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .gender{
+        width: 24% !important;
+    }
+
+}
+
+
+@media (max-width:455px){
+
+    main h2{
+        font-size: 20px;
+    }
+
+    #contacts{
+    display: none;
+    }
+
+    #menu_types{
+    display: none;
+    }
+
+    .hidden_menu_types{
+    display: flex !important;
+    }
+
+    .hidden_contacts{
+    display: flex !important;
+    }
+
+    #search{
+    margin-left: 10px;
+    width: 70%;
+    }
+
+    .hidden_avatar{
+        width: 10%;
+    }
+
+    .hidden_words{
+        display: none;
+    }
+
+    .message_element{
+        top: 360px;
+        margin-left: -45%;
+     }
+
+     .chose_payment div{
+        width: 100%;
+    }
+
+    .hidden_final_message{
+        display: none;
+    }
+}
+
+
+@media (max-width:420px){
+
+    #title img{
+        display: none;
+    }
+
+    #title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #title h1{
+        font-size: 22px;
+    }
+
+    #menu_hidden {
+        display: flex;
+        align-items: center;
+    }
+
+    #user_orders{
+        width: 100%;
+    }
+
+    table th{
+        font-size: 12px;
+    }
+
+    table img{
+        width: 10px;
+        height: 12px;
+    }
+
+    #user_orders form label{
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width:391px){
+    
+    #title h1{
+        text-shadow: 2px 1px 2px rgb(84, 121, 29);
+    }
+
+    .visible_orders{
+        display: none !important;
+    }
+
+    .hidden_word_menu{
+        display: block !important;
+    }
+
+    .hidden_menu_aside{
+        justify-content: flex-end;
+    }
+    
+    .message_element{
+        top: 465px;
+        right: 0px; 
+    }
+
+    .gender{
+        width: 100%;
+    }
+   
+    .gender select{
+        width: 28%;
+        margin: 0px;
+    }
+
+    .hidden_products{
+        display: none;
+      }
+
+      .visible_products{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+
+      .noResult_search,
+      .product_admin p{
+        font-size: 12px;
+      }
+
+      .stock p{
+        font-size: 15px;
+    }
+
+    .buttons_change{
+        width: 100%;
+    }
+
+    .gender{
+        width: 27% !important;
+    }
+
+}
+
+
+
+
+@media (max-width:358px){
+    .message_element{
+        width: 200px;
+        top: 465px;
+        right: 0px; 
+    }
+
+    .hidden_table{
+        display: none;
+    }
+
+    .hidden_cart2{
+        display: none;
+    }
+
+    .gender{
+        width: 30% !important;
+    }
+}
+
+
+@media (max-width:310px){
+
+    #title{
+        height: 40px;
+    }
+
+    #title h1{
+        font-size: 18px;
+    }
+
+    #search form img{
+        width: 22px;
+        height: 20px;
+        border-radius: 10px;
+    }
+
+    .hidden_menu_types ul{
+        width: 155%;
+    }
+
+    .hidden_aside{
+        height: 12px;
+    }
+
+    .hidden_aside img{
+        width: 35px;
+        height: 35px;
+    }
+
+    .hidden_aside p{
+        font-size: 16px !important;
+        color: rgb(147, 191, 81);  
+    }
+
+    .expiration_cards{
+        flex-direction: column !important;
+    }
+
+    .expiration_cards select{
+        width: 35% !important;
+    }
+
+    table th{
+        padding: 5px;
+    }
+
+    footer div{
+        width: auto;
+        margin: 0 auto;
+        letter-spacing: 1px;
+        font-size: 13px;
+    }
+
+    .register div,
+    .login div{
+        flex-direction: column;
+    }
+
+    .register input[type="email"],
+    .register input[type="password"],
+    .register input[type="text"],
+    .login input[type="email"],
+    .login input[type="password"]{
+        width: 100%;
+    }
+
+    .gender{
+        width: 36% !important;
+        margin: 0px !important;
+    }
+
+    .forget_password{
+        font-size: 14px;
+    }
+    
+}
+
+
+@media (max-width:281px){
+    .message_element{
+        width: 252px;
+        top: 443px;
+        left: 140px;
+    }
+
+}
+
+
+
+
+  
+
