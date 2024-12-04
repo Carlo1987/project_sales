@@ -7,7 +7,7 @@ Utils::isAdmin();
 
 <div id="user_orders">
 
-    <form action="orders-find?search" method="POST">
+    <form action="<?= url('orders-find?search') ?>" method="POST">
 
         <div>
             <label for="order">Numero d'ordine:</label>

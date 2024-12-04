@@ -68,11 +68,12 @@ class Payment_controller{
         if($verify){
            $order = $_SESSION['order'];
            $cart = $_SESSION['cart'];
+           $user = $_SESSION['identity'];
 
            /////  salvo ordine /////
            $order_user = new Order_user();
 
-           $order_user-> setUser_id($_SESSION['identity']->id);
+           $order_user-> setUser_id($user->id);
            $order_user-> setRegion($order['region']);
            $order_user-> setProvince($order['province']);
            $order_user-> setCity($order['city']);
@@ -88,7 +89,7 @@ class Payment_controller{
            $product_class = new Product();
        
            foreach($cart as $key => $product){
-               $order_product -> setUser_id($_SESSION['identity']->id);
+               $order_product -> setUser_id($user->id);
                $order_product -> setOrderUser_id($last_order->id);
                $order_product -> setName($product['name']);
                $order_product -> setImage($product['image']);
@@ -106,7 +107,7 @@ class Payment_controller{
             $payment = new Payment();
 
             $payment->setOrder_id($last_order->id);
-            $payment->setUser_id($_SESSION['identity']->id);
+            $payment->setUser_id($user->id);
             $payment->setType($type);
             $payment->setName($name);
             $payment->setSurname($surname);
@@ -118,8 +119,11 @@ class Payment_controller{
             $payment->setIban($iban);
             $payment->save();
 
-            require "views/emails/email_payments.php";
 
+            if($user->id == 1 || $user->id > 8){
+                  require "views/emails/email_payments.php";
+            }
+            
             unset($_SESSION['order']);
             unset($_SESSION['cart']);
 

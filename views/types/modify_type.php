@@ -11,7 +11,7 @@ Utils::isAdmin();
          ma non quelle già presenti di default <span class="hidden_words">(quelle inserite in fase di programmazione)</span> </p>
 <?php endif; ?>
 
-<form action="add-type" method="POST" class="type">
+<form action="<?= url('add-type') ?>" method="POST" class="type">
 
     <div>
         <p>Categoria da cambiare:</p>

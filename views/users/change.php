@@ -6,7 +6,7 @@ if($identity->id > 8 || $identity->id == 1)  :   ?>
 
 <h2>Modifica <span class="hidden_words">i tuoi</span> dati</h2>
 
-<form action="user-save" method="POST" enctype="multipart/form-data" class="change_datos_user">
+<form action="<?= url('user-save') ?>" method="POST" enctype="multipart/form-data" class="change_datos_user">
     <div>
         <label for="name">Nome:</label>
         <input type="text" name="name" value="<?=$identity->name?>">

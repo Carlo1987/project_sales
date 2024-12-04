@@ -3,6 +3,37 @@
 class Utils{
 
 
+
+    public static function title($title){
+        if (strlen($title) > 16){
+            return  substr($title, 0, 15).'...'; 
+        
+        }else{
+            return $title;
+        }
+    }
+
+
+    public static function issetDiscount($prod) {
+
+         if ($prod->discount != 0){
+            return "<span class='price_total'> 
+                     €$prod->price
+                   </span>
+                    <span class='discount'>
+                        Sconto $prod->discount!!
+                    </span>";
+         }
+    }
+
+
+
+    public static function getDiscount($prod){
+        return number_format($prod->price - (($prod->price * ($prod->discount / 100))), 2);
+    }
+
+
+
     ////////  METODO PER REINDIRIZZARE LE ROTTE  ////////
 
     public static function route($url):void{
@@ -118,34 +149,38 @@ class Utils{
     ///////////   CONSEGNA AUTOMATICA DEI PRODOTTI AL CLIENTE  //////////
 
     public static function update_orders(){
-        $current_day =  date('d');
-        $current_hour = date('H');
-        $current_minute =  date('i');
-
-        $orders = new Order_user();
-        $orders_inProgress = $orders->in_progress();
-
-        while($order = $orders_inProgress->fetch_object()){
-            $email = $order->email;
-
-            $date = $order->hour;
-            $date = explode(' ', $date);
-            $dates = explode('-',$date[0]);
-            $hours = explode(':',$date[1]);
+        if(isset($_SESSION['idendity']) && $_SESSION['identity']->id == 1 || isset($_SESSION['idendity']) && $_SESSION['identity']->id > 8){
+            $current_day =  date('d');
+            $current_hour = date('H');
+            $current_minute =  date('i');
     
-            $day = $dates[2];
-            $hour = $hours[0];
-            $minute = $hours[1];
+            $orders = new Order_user();
+            $orders_inProgress = $orders->in_progress();
     
-            if($current_day > $day || $current_hour > $hour || $current_minute >= $minute+2){
-
-              require "views/emails/email_finish.php";
-              return $orders->update_orders($order->id);
+            while($order = $orders_inProgress->fetch_object()){
+                $email = $order->email;
     
-            }else{ 
-                return null;
+                $date = $order->hour;
+                $date = explode(' ', $date);
+                $dates = explode('-',$date[0]);
+                $hours = explode(':',$date[1]);
+        
+                $day = $dates[2];
+                $hour = $hours[0];
+                $minute = $hours[1];
+        
+                if($current_day > $day || $current_hour > $hour || $current_minute >= $minute+2){
+    
+                  require "views/emails/email_finish.php";
+                  return $orders->update_orders($order->id);
+        
+                }else{ 
+                    return null;
+                }
             }
-        }   
+        }else{ 
+            return null;
+        }
     }
 
 

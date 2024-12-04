@@ -34,7 +34,7 @@
            <span>Email di contatto:</span>
         </div>
         <div>
-            <a href="mailto:carlo_loi87@yahoo.it"> carlo_loi87@yahoo.it </a>
+            <a href="mailto:carlo_loi87@yahoo.it" class="my_email"> carlo_loi87@yahoo.it </a>
         </div>
       
       </div>

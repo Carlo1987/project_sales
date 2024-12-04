@@ -1,6 +1,6 @@
 <h2>Reset della password</h2>
 
-<form action="user-newPassword" method="POST" class="form_forget_password">
+<form action="<?= url('user-newPassword') ?>" method="POST" class="form_forget_password">
 
 <div>
     <label for="password">Inserisci nuova password:</label>

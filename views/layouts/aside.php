@@ -17,7 +17,7 @@ if (!isset($_SESSION['identity'])) : ?>
 
     <div class="block_aside login">
         <h3>Login</h3>
-        <form action="user-login" method="POST">
+        <form action="<?= url('user-login') ?>" method="POST">
             <div>
                 <label for="email">Email:</label>
                 <input type="email" name="email">
@@ -44,7 +44,7 @@ if (!isset($_SESSION['identity'])) : ?>
 
     <div class="block_aside register">
         <h3>Registrati</h3>
-        <form action="user-save" method="POST" enctype="multipart/form-data">
+        <form action="<?= url('user-save') ?>" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nome:</label>
                 <input type="text" name="name">

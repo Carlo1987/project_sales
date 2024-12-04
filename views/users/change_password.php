@@ -4,7 +4,7 @@ if($_SESSION['identity']->id > 8 || $_SESSION['identity']->id == 1)  :  ?>
 
 <h2>Modifica password</h2>
 
-<form action="user-save?editPassword" method="POST" class="change_datos_user change_password_user">
+<form action="<?= url('user-save?editPassword') ?>" method="POST" class="change_datos_user change_password_user">
 
 <div>
         <label for="password">Vecchia password:</label>

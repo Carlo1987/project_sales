@@ -76,15 +76,15 @@ if(window.location.href.indexOf('product') > -1){
   /////////////    aggiorna prezzo in base alla quantità   ////////////////////////////////
   let price = document.querySelector('.price_real span span');
   let quantity = document.querySelector('.quantity_number');
-  
+   
   let value_initial = parseFloat(price.textContent);
-  
-  function getValue(){
-    let newPrice = value_initial * parseInt(quantity.value);
-    return price.innerHTML = newPrice.toFixed(2);
-  }
-  
-  getValue(); 
+
+  quantity.addEventListener('change',(event)=>{
+    let quantity_value = event.target.value;
+    let newPrice = value_initial * parseInt(quantity_value);  
+    price.innerHTML = newPrice.toFixed(2);
+  })
+ 
 
 }
 

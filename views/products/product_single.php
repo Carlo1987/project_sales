@@ -26,28 +26,23 @@ if (isset($_GET['edit'])) {
             <p><?= $product->description ?></p>
         </div>
 
-        <div class="hidden_img_product">
-            <img src="<?= url('assets/img/products/'.$product->type_name.'/'.$product->image) ?>" alt="immagine_prodotto">
-        </div>
-
 
         <form action="<?= $url ?>" method="POST">
 
-            <div class="form">
                 <div class="buy_boxe">
-                    <div class="price">
-                        <?php
-                        $price = $product->price;
-                        $discount = $product->discount;
-                        if ($discount != 0) : ?>
-                            <p class="price_total">€<span><?= $price ?></span></p>
-                            <p class="discount_product">Sconto del <span><?= $discount ?></span>%!!</p>
-                        <?php endif; ?>
-                        <p class="price_real">Prezzo: <span class="decoration_price"> €<span><?= number_format($price - ($price * ($discount / 100)), 2) ?></span></span></p>
+                  
+                    <div class="product__price">                
+                        <?= Utils::issetDiscount($product); ?>      
                     </div>
 
-                    <div class="quantity">
-                        <select name="quantity_number" class="quantity_number" onchange="getValue()">
+
+                    <div class="product__quantity">
+                       <div style="padding-top:4px;">
+                        Prezzo: <span class="decoration_price"> €<?= Utils::getDiscount($product); ?></span>
+                       </div>
+
+                       <div class="quantity">
+                        <select name="quantity_number" class="quantity_number">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -55,13 +50,16 @@ if (isset($_GET['edit'])) {
                             <option value="5">5</option>
                         </select>
                     </div>
+                    </div>
+
+
                 </div>
 
-                <div class="buy_product">
+                <div class="button_product">
                     <input type="submit" value="<?= $value ?>" name="buy">
                 </div>
         </form>
-    </div>
+   
 
     <?php if (!isset($_SESSION['error_stock'])) {
         if ($product->stock < 5 && $product->stock != 1 && $product->stock != 0) : ?>
@@ -121,8 +119,9 @@ if (isset($_GET['edit'])) {
             <?php endif; ?>
 
         </div>
-    <?php endif; ?>
-</div>
+       <?php endif; ?>
+      </div>
+    </div>
 </div>
 
 <?php Utils::update_product(); ?>

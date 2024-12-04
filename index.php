@@ -45,7 +45,7 @@ Utils::update_stock();
 
     <header>
         <div id="title">
-            <img src="<?=url('assets/img/icon.jpg')?>" alt="icon_dichatleon" class="icon_web">
+            <img src="<?=url('assets/img/dichatleon.png')?>" alt="Dichatleon" class="icon_web">
             <a href="<?=url('home')?>">
                 <h1>Dichatleon</h1>
             </a>
@@ -54,14 +54,9 @@ Utils::update_stock();
 <?php Utils::cartCookie(); ?>
     <nav>
         <ul>
-            <li style=" border-left: none;" class="link_home">
-                <a href="<?=url('home')?>" style="color: rgb(147, 191, 81);"> HOME </a>
-            </li>
-
-
 
             <li id="menu_types">
-                <a href="#"> <?= $nav['categories']['name'] ?> </a>
+                <a href="#" class="categories__link"> <?= $nav['categories']['name'] ?> </a>
                 <ul>
                     <?php    
                     ob_start();
@@ -71,14 +66,14 @@ Utils::update_stock();
 
                     while ($type = $types->fetch_object()) : ?>    
                         <li>
-                            <a href="<?= url( $router->generateUrl($nav['categories']['url'] , ['id' => $type->id ]) )  ?>"> <?= $type->name ?> </a>
+                            <a class="nav__hover" href="<?= url( $router->generateUrl($nav['categories']['url'] , ['id' => $type->id ]) )  ?>"> <?= $type->name ?> </a>
                         </li>
                     <?php endwhile; ?>
                 </ul>
             </li>
 
             <li id="contacts">
-                <a href="<?= url( $nav['contacts']['url'] ) ?>"> <?= $nav['contacts']['name'] ?> </a>
+                <a class="nav__hover" href="<?= url( $nav['contacts']['url'] ) ?>"> <?= $nav['contacts']['name'] ?> </a>
             </li>
         </ul>
 
@@ -117,20 +112,6 @@ Utils::update_stock();
                     </a> 
                  </div>
                 </li>
-                <li class="hidden_menu_types">
-                <div class="hidden_images"> <img src="<?= url( $nav['categories']['image'] ) ?>"> </div>
-                  <div>  <a href="#"> <?= $nav['categories']['name'] ?> </a> </div>
-                    <ul>
-                        <?php $types_class = new Type();
-                        $types = $types_class->getAllTypes();
-
-                        while ($type = $types->fetch_object()) : ?>
-                            <li>
-                                <a href="<?= url( $router->generateUrl($nav['categories']['url'] , ['id' => $type->id ]) ) ?>"> <?= $type->name ?> </a>
-                            </li>
-                        <?php endwhile; ?>
-                    </ul> 
-                </li>
                 <li>
                 <div class="hidden_images">  <img src="<?= url( $nav['users']['image'] ) ?>"> </div>
                   <div>  
@@ -143,6 +124,21 @@ Utils::update_stock();
                    <?= $nav['contacts']['name'] ?>
                     </a> </div>
                 </li>
+                <li class="hidden_menu_types">
+                <div class="hidden_images"> <img src="<?= url( $nav['categories']['image'] ) ?>"> </div>
+                  <div>  <a href="#"  class="categories__link"> <?= $nav['categories']['name'] ?> </a> </div>
+                    <ul>
+                        <?php $types_class = new Type();
+                        $types = $types_class->getAllTypes();
+
+                        while ($type = $types->fetch_object()) : ?>
+                            <li>
+                                <a href="<?= url( $router->generateUrl($nav['categories']['url'] , ['id' => $type->id ]) ) ?>"> <?= $type->name ?> </a>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul> 
+                </li>
+            
             </ul>
         </div>
 

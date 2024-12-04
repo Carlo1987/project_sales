@@ -42,12 +42,11 @@ export function loading(url){
                     delete_product(link,url);
                 
                 }else if(link.classList.contains('modify_element')){
-                    console.log('ok');
                     
                     e.preventDefault();
                     modify_product(link);
 
-                }else{
+                }else if(!link.classList.contains('my_email') && !link.classList.contains('categories__link')){
                     create_loading();
                 }
             }

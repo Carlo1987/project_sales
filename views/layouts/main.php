@@ -22,23 +22,7 @@ while ($type = $types->fetch_object()) :
                         $name = $prod->name   ?>
 
                        <div class="product list_index">
-                           <a href="<?= url('product/'.$prod->id) ?>">
-                               <?php if (strlen($name) > 16) : ?>
-                                   <h3><?= substr($prod->name, 0, 15); ?>...</h3>
-                               <?php else : ?>
-                                   <h3><?= $name ?></h3>
-                               <?php endif; ?>
-
-                               <img src="<?= url('assets/img/products/'.$type->name.'/'.$prod->image) ?>" alt="product">
-                               <p><?= substr($prod->description, 0, 20) ?>...</p>
-                               <?php
-                                $discount = $prod->discount;
-                                $price = $prod->price;
-                                if ($discount != 0) : ?>
-                                   <p class="price_total" style="margin-top: -10px;"><span class="discount">Sconto del <span><?= $discount ?></span>%!!</span>€<?= $price ?></p>
-                               <?php endif; ?>
-                               <p class="price_real">prezzo: <span class="decoration_price">€<span><?= number_format($price - ($price * ($discount / 100)), 2) ?></span></span></p>
-                           </a>
+                            <?php  include './views/products/card_product.php'; ?>
                        </div>
                    <?php endwhile; ?>
                </div>
